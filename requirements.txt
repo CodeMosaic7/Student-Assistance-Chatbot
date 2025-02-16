@@ -1,0 +1,12 @@
+langchain
+langchain_community
+pinecone-client
+streamlit
+python-dotenv
+google-generativeai
+pypdf
+transformers
+nltk
+langchain_huggingface
+speechrecognition
+pyttsx3
