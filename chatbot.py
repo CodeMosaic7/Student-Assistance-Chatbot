@@ -18,12 +18,11 @@ nltk.download('averaged_perceptron_tagger')
 
 print("Loaded necessary libraries")
 
-# PINECONE_API_KEY=os.environ.get('PINECONE_API_KEY')
-# PINECONE_API_ENV=os.getenv('PINECONE_API_ENV','pinecone')
-
+PINECONE_API_KEY=os.environ.get('PINECONE_API_KEY')
+HUGGING_FACE_API_KEY=os.environ.get('HUGGING_FACE_API_KEY')
 # Initialize Pinecone Database
 def database_initialization():
-    pc = Pinecone(api_key='pcsk_2u3TiU_FUtVL6AFu7ghLZQ625pJxvqvCVREALktLm3wVMg4gkmSMtNGcmDY18txQRLsYWx')
+    pc = Pinecone(api_key=PINECONE_API_KEY)
     index = pc.Index("student-assistance")
     print("Pinecone initialized")
     return index
@@ -84,7 +83,7 @@ load_and_upsert_web_data()
 
 # HuggingFace Model Initialization
 def initialize_huggingface_model():
-    login(token="your_huggingface_api_key")
+    login(token=HUGGING_FACE_API_KEY)
     print("Logged into Hugging Face")
     
     model_name = "meta-llama/Llama-3.3-70B"
